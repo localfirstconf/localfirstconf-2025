@@ -9,7 +9,7 @@ export default function SchedulePage() {
         <LogoLink className="mb-12 block md:hidden" />
         <h1 className="font-display text-6xl uppercase leading-none md:text-[5rem]">Schedule</h1>
         <p className="mb-16 mt-8 md:text-center">
-          Welcome to Local-First Conf 2024, taking place on May 30 (conference) and 31 (expo day) in Berlin, Germany. Choose a day below to see the
+          Welcome to Local-First Conf 2025, taking place on May 26 (community day), May 27 (conference day 1), and May 28 (conference day 2) in Berlin, Germany. Choose a day below to see the
           schedule.
         </p>
       </div>

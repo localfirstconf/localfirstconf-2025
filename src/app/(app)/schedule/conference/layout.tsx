@@ -21,9 +21,9 @@ export default function Layout({
           <div className="mb-1 uppercase tracking-widest text-orange md:text-lg">Local-First Conf</div>
           <h1 className="font-display text-4xl uppercase leading-none md:text-7xl">Conference Day Schedule</h1>
           <p className="mb-16 mt-8">
-            The conference day is on May 30, 2024. The venue is Schankhalle Pfefferberg located at{' '}
-            <a href="https://maps.app.goo.gl/sFm1EMsFPkQAHt1b7" target="_blank" rel="noreferrer" className="underline">
-              Schönhauser Allee 176, 10119 Berlin
+            The conference days are on May 27 and 28, 2025. The venue is nHow Berlin located at{' '}
+            <a href="https://maps.app.goo.gl/QeY8FyGUfgCPHhst8" target="_blank" rel="noreferrer" className="underline">
+              Stralauer Allee 3, 10245 Berlin
             </a>
             .
           </p>
