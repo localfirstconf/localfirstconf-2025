@@ -19,22 +19,32 @@ export const MobileNavigation: FC<{}> = ({}) => {
       <ul className="relative grid grid-cols-4 py-2 text-center text-[0.6rem] leading-none">
         <div className="absolute top-0 h-px w-full bg-neutral-400" />
         <li className="relative">
-          <Link href="/schedule/conference" className={pathname === '/schedule/conference' ? 'text-black' : ''}>
+          <Link href="/schedule/expo" className={pathname === '/schedule/expo' ? 'text-black' : ''}>
             <CalendarIcon className="mx-auto mb-2 size-6" />
             <span>
-              Conference
+              Monday
               <br />
-              Schedule
+              Community
             </span>
           </Link>
         </li>
         <li className="relative">
-          <Link href="/schedule/expo" className={pathname === '/schedule/expo' ? 'text-black' : ''}>
+          <Link href="/schedule/conference" className={pathname === '/schedule/conference' ? 'text-black' : ''}>
             <CalendarIcon className="mx-auto mb-2 size-6" />
             <span>
-              Expo Day
+              Tuesday
               <br />
-              Schedule
+              Talks
+            </span>
+          </Link>
+        </li>
+        <li className="relative">
+          <Link href="/schedule/conference-day-2" className={pathname === '/schedule/conference-day-2' ? 'text-black' : ''}>
+            <CalendarIcon className="mx-auto mb-2 size-6" />
+            <span>
+              Wednesday
+              <br />
+              Talks
             </span>
           </Link>
         </li>
@@ -45,16 +55,6 @@ export const MobileNavigation: FC<{}> = ({}) => {
               Speaker
               <br />
               List
-            </span>
-          </Link>
-        </li>
-        <li className="relative">
-          <Link href={`/profile/${slug ? slug : 'link'}`} className={pathname.startsWith('/profile') ? 'text-black' : ''}>
-            <UserIcon className="mx-auto mb-2 size-6" />
-            <span>
-              Attendee
-              <br />
-              Profile
             </span>
           </Link>
         </li>

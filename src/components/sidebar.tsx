@@ -4,10 +4,9 @@ import {LogoLink} from './logo-link'
 
 export const Sidebar = () => {
   return (
-    <aside className="fixed top-0 hidden h-screen w-60 shrink-0 flex-col justify-between p-8 pt-24 md:flex">
+    <aside className="fixed top-0 hidden h-screen w-60 shrink-0 flex-col gap-8 p-8 pt-24 md:flex">
       <LogoLink />
       <Navigation />
-      <ProfileLink />
     </aside>
   )
 }
