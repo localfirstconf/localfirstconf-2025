@@ -3,7 +3,7 @@ import {allSessions, allProfiles} from 'contentlayer/generated'
 import {Schedule} from '@/components/schedule'
 
 const sessions = allSessions
-  .filter((session) => session.path.startsWith('/schedule/conference'))
+  .filter((session) => session.path.startsWith('/schedule/talks-day-1'))
   .filter((session) => session.start.startsWith('2025-05-27'))
   .map((session) => {
     const speaker = allProfiles.find((profile) => profile.slug === session.speaker)!

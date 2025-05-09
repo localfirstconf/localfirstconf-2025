@@ -14,7 +14,7 @@ export default function SchedulePage() {
         </p>
       </div>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-        <Link href="/schedule/expo" className="group relative">
+        <Link href="/schedule/community-day" className="group relative">
           <svg
             viewBox="0 0 609 689"
             fill="none"
@@ -39,7 +39,7 @@ export default function SchedulePage() {
             Monday<br/>Community Day
           </h2>
         </Link>
-        <Link href="/schedule/conference" className="group relative">
+        <Link href="/schedule/talks-day-1" className="group relative">
           <svg
             viewBox="0 0 610 688"
             fill="none"
@@ -65,7 +65,7 @@ export default function SchedulePage() {
             Talks, Day 1
           </h2>
         </Link>
-        <Link href="/schedule/conference-day-2" className="group relative">
+        <Link href="/schedule/talks-day-2" className="group relative">
           <svg
             viewBox="0 0 610 688"
             fill="none"

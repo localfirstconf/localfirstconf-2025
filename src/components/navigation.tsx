@@ -11,9 +11,9 @@ const content = {
       href: '/schedule',
       caption: 'Schedule',
       children: [
-        {href: '/schedule/expo', caption: 'Community Day'},
-        {href: '/schedule/conference', caption: 'Talks, Day 1'},
-        {href: '/schedule/conference-day-2', caption: 'Talks, Day 2'}
+        {href: '/schedule/community-day', caption: 'Community Day'},
+        {href: '/schedule/talks-day-1', caption: 'Talks, Day 1'},
+        {href: '/schedule/talks-day-2', caption: 'Talks, Day 2'}
       ]
     },
     {href: '/speakers', caption: 'Speakers'}
