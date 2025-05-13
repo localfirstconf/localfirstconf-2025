@@ -6,4 +6,6 @@ duration: 15
 location: Main Stage
 ---
 
-TBD
+It's often useful in applications to have a historic view of data (e.g. "revision history" in GDocs, or the commit log in Git). Storing this efficiently requires data structures that can "delta encode" the data over time, storing only what has changed.
+
+In this talk, we'll explore how CRDTs can be used for delta encoding arbitrary data structures, and see how the Yjs CRDT can be transformed into a temporal data structure. In the process, we'll gain an understanding for how the Yjs CRDT represents data internally and on the wire.

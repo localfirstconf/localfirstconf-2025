@@ -4,3 +4,7 @@ start: 2025-05-27T18:00:00+02:00
 duration: 15
 speaker: dev-agrawal
 --- 
+
+We all love sync engines for their ability to simplify state management and enable instant UI interactions, but the secret third benefit is the potential of highly efficient data processing. Sync engines that own the state on both client and server have this incredibly ability to only push granular changes to the client as they happen. So it’s a shame that we hand this granular data off to a UI renderer that has no idea how to process them and resorts to rerunning and diffing everything. What if our UI renderer matched the technical capability of our state management?
+
+This talk will show how modern renderers like Svelte and Solid can take full advantage of sync engines’ ability to make incremental updates to the data, and do the absolute minimum work required to update the UI, instead of recomputing large sections of the UI and reconciling with the current UI.
