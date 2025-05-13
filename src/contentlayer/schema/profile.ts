@@ -21,8 +21,7 @@ export const Profile = defineDocumentType(() => ({
   computedFields: {
     slug: {
       type: 'string',
-      resolve: (profile: any) =>
-        profile.speaker ? profile._raw.sourceFileName.replace('.mdx', '').split('-').slice(1).join('-') : profile._raw.sourceFileName.replace('.mdx', '')
+      resolve: (profile: any) => profile._raw.sourceFileName.replace('.mdx', '')
     },
     order: {
       type: 'number',
