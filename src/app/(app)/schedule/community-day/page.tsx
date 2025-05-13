@@ -1,7 +1,7 @@
 import {Metadata} from 'next'
 
 export const metadata: Metadata = {
-  title: 'Expo Day – Local-First Conf 2024'
+  title: 'Community Day – Local-First Conf 2025'
 }
 
 export default function ExpoPage() {

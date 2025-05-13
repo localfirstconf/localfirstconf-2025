@@ -18,10 +18,10 @@ export default function Layout({
     <div className="flex w-full gap-16">
       <div className={cn('duration-300 ease-in-out md:transition-transform', centered ? 'md:translate-x-1/2' : 'md:translate-x-0')}>
         <SchedulePage type="conference">
-          <div className="mb-1 uppercase tracking-widest text-orange md:text-lg">Local-First Conf</div>
-          <h1 className="font-display text-4xl uppercase leading-none md:text-7xl">Conference Day 1 Schedule</h1>
+          <div className="mb-1 uppercase tracking-widest text-orange md:text-lg">Local-First Conf 2025</div>
+          <h1 className="font-display text-4xl uppercase leading-none md:text-7xl">Talks, Day 1</h1>
           <p className="mb-16 mt-8">
-            The first conference day is on May 27, 2025. The venue is nHow Berlin located at{' '}
+            The first day of talks is on Tuesday, May 27. The venue is nHow Berlin located at{' '}
             <a href="https://maps.app.goo.gl/QeY8FyGUfgCPHhst8" target="_blank" rel="noreferrer" className="underline">
               Stralauer Allee 3, 10245 Berlin
             </a>

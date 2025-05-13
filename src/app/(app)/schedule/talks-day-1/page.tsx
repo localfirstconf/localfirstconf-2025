@@ -12,7 +12,7 @@ const sessions = allSessions
   .sort((a, b) => a.start.localeCompare(b.start))
 
 export const metadata: Metadata = {
-  title: 'Conference Day – Local-First Conf 2024'
+  title: 'Talks – Local-First Conf 2025'
 }
 
 export default function ConferencePage() {
