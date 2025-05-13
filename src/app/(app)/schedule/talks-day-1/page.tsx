@@ -1,5 +1,5 @@
 import {Metadata} from 'next'
-import {allSessions, allProfiles} from 'contentlayer/generated'
+import {allSessions, allProfiles, Session, Profile} from 'contentlayer/generated'
 import {Schedule} from '@/components/schedule'
 
 console.log('All profiles:', allProfiles.map(p => ({slug: p.slug, name: p.name})))
@@ -16,6 +16,7 @@ const sessions = allSessions
     }
     return {...session, speaker}
   })
+  .filter((session): session is Session & {speaker: Profile} => session.speaker !== undefined)
   .sort((a, b) => a.start.localeCompare(b.start))
 
 export const metadata: Metadata = {
