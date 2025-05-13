@@ -3,7 +3,7 @@ import {Schedule} from './schedule'
 import {allSessions, allProfiles} from 'contentlayer/generated'
 import {LogoLink} from './logo-link'
 
-export const SchedulePage: FC<{type: 'conference' | 'expo'; children?: ReactNode}> = ({type, children}) => {
+export const SchedulePage: FC<{type: 'talks-day-1' | 'talks-day-2' | 'community-day'; children?: ReactNode}> = ({type, children}) => {
   const sessions = allSessions
     .filter((session) => session.category === type)
     .map((session) => {
