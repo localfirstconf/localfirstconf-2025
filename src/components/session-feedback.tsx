@@ -2,6 +2,10 @@ import Link from 'next/link'
 import {FC} from 'react'
 
 export const SessionFeedback: FC<{sessionTitle: string}> = ({sessionTitle}) => {
+  // During/after the conference we can turn on a feedback link
+  return <></>
+
+  /*
   const formUrl = `https://docs.google.com/forms/d/e/1FAIpQLSeiMT7V1HefsrtGR31-tjD8ie05VHvSW12Cja0gfk55UY5g4g/viewform?entry.600067007=${sessionTitle}`
 
   return (
@@ -16,4 +20,5 @@ export const SessionFeedback: FC<{sessionTitle: string}> = ({sessionTitle}) => {
       </p>
     </div>
   )
+  */
 }
