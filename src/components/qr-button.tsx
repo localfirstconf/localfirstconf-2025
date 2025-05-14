@@ -5,6 +5,10 @@ import {FC, useState} from 'react'
 import QRCode from 'react-qr-code'
 
 export const QRButton: FC<{url: string}> = ({url}) => {
+  // This functionality disabled for now
+  return <></>
+
+  /*
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -21,4 +25,5 @@ export const QRButton: FC<{url: string}> = ({url}) => {
       </Dialog>
     </>
   )
+  */
 }
