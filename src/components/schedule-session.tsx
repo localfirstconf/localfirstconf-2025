@@ -11,6 +11,11 @@ export const ScheduleSession: FC<{session: Omit<Session, 'speaker'> & {speaker: 
   const {title, speaker, placeholder, start, duration, path} = session
   const pathname = usePathname()
 
+  if (!placeholder && !speaker) {
+    console.error('Speaker is undefined for non-placeholder session:', { title, path })
+    return null
+  }
+
   return (
     <li
       className="group absolute left-16 right-4 pb-0.5 md:left-20"
