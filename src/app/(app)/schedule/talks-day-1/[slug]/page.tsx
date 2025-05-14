@@ -14,7 +14,7 @@ export async function generateMetadata({params: {slug}}: {params: {slug: string}
   if (!session || session.placeholder) notFound()
 
   return {
-    title: `${session.title} – Conference Day – Local-First Conf 2025`
+    title: `${session.title} – Talks, Day 1 – Local-First Conf 2025`
   }
 }
 
