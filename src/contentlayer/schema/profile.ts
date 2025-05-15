@@ -7,7 +7,7 @@ export const Profile = defineDocumentType(() => ({
   fields: {
     name: {type: 'string', required: true},
     role: {type: 'string', required: true},
-    avatar: {type: 'string', required: true},
+    avatar: {type: 'string', required: false},
     speaker: {type: 'boolean', required: false, default: false},
     workshopHost: {type: 'boolean', required: false, default: false},
     email: {type: 'string', required: false},

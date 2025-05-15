@@ -17,11 +17,19 @@ export default function SpeakersPage() {
             <li key={index}>
               <Link href={`/profile/${slug}`} className="group flex flex-col items-center">
                 <div className="relative aspect-square w-full transition-transform duration-150 ease-in-out group-hover:scale-105">
-                  <Image src={avatar} alt={name} fill className="object-contain object-center" />
-                  {avatar.startsWith('https://') && (
-                    <svg viewBox="0 0 689 689" xmlns="http://www.w3.org/2000/svg" className="absolute -inset-px fill-current text-black">
-                      <path fillRule="evenodd" clipRule="evenodd" d="M233 0H0V689H558.5H689V0H233ZM233 0L643.5 92V591L558.5 689L35 571V302L233 0Z" />
-                    </svg>
+                  {avatar ? (
+                    <>
+                      <Image src={avatar} alt={name} fill className="object-contain object-center" />
+                      {avatar.startsWith('https://') && (
+                        <svg viewBox="0 0 689 689" xmlns="http://www.w3.org/2000/svg" className="absolute -inset-px fill-current text-black">
+                          <path fillRule="evenodd" clipRule="evenodd" d="M233 0H0V689H558.5H689V0H233ZM233 0L643.5 92V591L558.5 689L35 571V302L233 0Z" />
+                        </svg>
+                      )}
+                    </>
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center bg-neutral-100">
+                      <span className="text-4xl text-neutral-400">{name.charAt(0)}</span>
+                    </div>
                   )}
                 </div>
                 <h2 className="mt-8 text-center font-display text-2xl uppercase leading-none">{name}</h2>
