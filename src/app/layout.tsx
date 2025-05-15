@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description: "Join us for the world's first local-first conference. Connect with a rapidly-growing community in an intimate setting. Berlin, May 26-28 2025.",
     images: [
       {
-        url: '/opengraph-image.webp',
+        url: '/images/opengraph-image.webp',
         width: 1200,
         height: 630,
         alt: 'Local-First Conf 2025'
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Local-First Conf 2025',
     description: "Join us for the world's first local-first conference. Connect with a rapidly-growing community in an intimate setting. Berlin, May 26-28 2025.",
-    images: ['/opengraph-image.webp']
+    images: ['/images/opengraph-image.webp']
   }
 }
 
