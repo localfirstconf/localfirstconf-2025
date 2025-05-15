@@ -103,7 +103,7 @@ export default function AttendeePage({params: {slug}}: {params: {slug: string}})
               </li>
             )}
           </ul>
-          <QRButton url={`https://app.localfirstconf.com/profile/${profile.slug}`} />
+          <QRButton url={`https://app-2025.localfirstconf.com/profile/${profile.slug}`} />
         </div>
         <div className="relative size-64 shrink-0">
           {profile.avatar && (
