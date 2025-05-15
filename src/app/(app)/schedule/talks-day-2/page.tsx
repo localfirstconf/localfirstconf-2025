@@ -1,5 +1,6 @@
 import {allSessions, allProfiles, Session, Profile} from 'contentlayer/generated'
 import {Schedule} from '@/components/schedule'
+import {Metadata} from 'next'
 
 const sessions = allSessions
   .filter((session) => session.path.startsWith('/schedule/talks-day-2'))
