@@ -106,16 +106,20 @@ export default function AttendeePage({params: {slug}}: {params: {slug: string}})
           <QRButton url={`https://app.localfirstconf.com/profile/${profile.slug}`} />
         </div>
         <div className="relative size-64 shrink-0">
-          <Image
-            src={profile.avatar}
-            alt={profile.name}
-            fill
-            className="object-contain object-center transition-transform duration-150 ease-in-out group-hover:scale-105"
-          />
-          {profile.avatar.startsWith('https://') && (
-            <svg viewBox="0 0 689 689" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 fill-current text-black">
-              <path fillRule="evenodd" clipRule="evenodd" d="M233 0H0V689H558.5H689V0H233ZM233 0L643.5 92V591L558.5 689L35 571V302L233 0Z" />
-            </svg>
+          {profile.avatar && (
+            <>
+              <Image
+                src={profile.avatar}
+                alt={profile.name}
+                fill
+                className="object-contain object-center transition-transform duration-150 ease-in-out group-hover:scale-105"
+              />
+              {profile.avatar.startsWith('https://') && (
+                <svg viewBox="0 0 689 689" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 fill-current text-black">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M233 0H0V689H558.5H689V0H233ZM233 0L643.5 92V591L558.5 689L35 571V302L233 0Z" />
+                </svg>
+              )}
+            </>
           )}
         </div>
       </div>
