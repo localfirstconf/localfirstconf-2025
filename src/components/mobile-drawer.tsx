@@ -34,11 +34,19 @@ export const MobileDrawer: FC<{session: Omit<Session, 'speaker'> & {speaker: Pro
           <div className="flex flex-col overflow-y-auto p-8 pb-24 pt-12 text-black">
             <Link href={`/speakers/${session.speaker.slug}`} className="group/speaker flex items-center gap-2">
               <div className="relative size-12">
-                <Image src={session.speaker.avatar} alt={session.speaker.name} fill className="object-contain object-left" />
-                {session.speaker.avatar.startsWith('https://') && (
-                  <svg viewBox="0 0 689 689" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 fill-current text-white">
-                    <path fillRule="evenodd" clipRule="evenodd" d="M233 0H0V689H558.5H689V0H233ZM233 0L643.5 92V591L558.5 689L35 571V302L233 0Z" />
-                  </svg>
+                {session.speaker.avatar ? (
+                  <>
+                    <Image src={session.speaker.avatar} alt={session.speaker.name} fill className="object-contain object-left" />
+                    {session.speaker.avatar.startsWith('https://') && (
+                      <svg viewBox="0 0 689 689" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 fill-current text-white">
+                        <path fillRule="evenodd" clipRule="evenodd" d="M233 0H0V689H558.5H689V0H233ZM233 0L643.5 92V591L558.5 689L35 571V302L233 0Z" />
+                      </svg>
+                    )}
+                  </>
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center bg-neutral-100">
+                    <span className="text-xl text-neutral-400">{session.speaker.name.charAt(0)}</span>
+                  </div>
                 )}
               </div>
               <div className="leading-tight">
