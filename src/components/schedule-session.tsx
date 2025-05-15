@@ -7,7 +7,7 @@ import Link from 'next/link'
 import {usePathname} from 'next/navigation'
 import {FC} from 'react'
 
-export const ScheduleSession: FC<{session: Omit<Session, 'speaker'> & {speaker: Profile}; firstStart: Date}> = ({session, firstStart}) => {
+export const ScheduleSession: FC<{session: Omit<Session, 'speaker'> & {speaker?: Profile}; firstStart: Date}> = ({session, firstStart}) => {
   const {title, speaker, placeholder, start, duration, path} = session
   const pathname = usePathname()
 
@@ -36,7 +36,7 @@ export const ScheduleSession: FC<{session: Omit<Session, 'speaker'> & {speaker: 
         >
           <h3 className={cn('leading-none', duration < 15 && 'line-clamp-1')}>
             <span className="font-display text-base leading-none">{title}</span>
-            <span className="text-xs opacity-75">{` ${speaker.name}`}</span>
+            {speaker && <span className="text-xs opacity-75">{` ${speaker.name}`}</span>}
           </h3>
         </Link>
       )}

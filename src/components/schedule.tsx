@@ -6,7 +6,7 @@ import {addHours, addMinutes, eachHourOfInterval, interval, startOfHour} from 'd
 import {format, toZonedTime} from 'date-fns-tz'
 import {ScheduleSession} from './schedule-session'
 
-export const Schedule: React.FC<{sessions: (Omit<Session, 'speaker'> & {speaker: Profile})[]}> = ({sessions}) => {
+export const Schedule: React.FC<{sessions: (Omit<Session, 'speaker'> & {speaker?: Profile})[]}> = ({sessions}) => {
   const firstStart = startOfHour(new Date(sessions[0].start))
   const lastEnd = addMinutes(new Date(sessions[sessions.length - 1].start), sessions[sessions.length - 1].duration)
   const hours = eachHourOfInterval(interval(firstStart, addHours(lastEnd, 1)))
