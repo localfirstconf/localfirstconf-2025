@@ -12,7 +12,7 @@ export default function SpeakersPage() {
       <ul className="mt-16 grid grid-cols-2 gap-y-16 md:grid-cols-3">
         {allProfiles
           .filter((profile) => profile.speaker)
-          .sort((a, b) => a.order - b.order)
+          .sort((a, b) => b.name.localeCompare(a.name))
           .map(({name, role, avatar, slug}, index) => (
             <li key={index}>
               <Link href={`/profile/${slug}`} className="group flex flex-col items-center">
