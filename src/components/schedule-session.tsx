@@ -7,9 +7,19 @@ import Link from 'next/link'
 import {usePathname} from 'next/navigation'
 import {FC} from 'react'
 
-export const ScheduleSession: FC<{session: Omit<Session, 'speaker'> & {speaker?: Profile}; firstStart: Date}> = ({session, firstStart}) => {
+const colors = [
+  {bg: '#3581F6', text: '#FFFFFF'},
+  {bg: '#EF8AF9', text: '#000000'}
+]
+
+export const ScheduleSession: FC<{
+  session: Omit<Session, 'speaker'> & {speaker?: Profile}
+  firstStart: Date
+  index: number
+}> = ({session, firstStart, index}) => {
   const {title, speaker, placeholder, start, duration, path} = session
   const pathname = usePathname()
+  const color = colors[index % 2]
 
   if (!placeholder && !speaker) {
     console.error('Speaker is undefined for non-placeholder session:', { title, path })
@@ -32,7 +42,7 @@ export const ScheduleSession: FC<{session: Omit<Session, 'speaker'> & {speaker?:
           href={path}
           scroll={false}
           className={cn('relative flex h-full items-start px-2 pt-1 transition-transform duration-150 hover:scale-[1.03]')}
-          style={{backgroundColor: pathname === path ? '#ffffff' : session.colors.bg, color: pathname === path ? '#000000' : session.colors.text}}
+          style={{backgroundColor: pathname === path ? '#ffffff' : color.bg, color: pathname === path ? '#000000' : color.text}}
         >
           <h3 className={cn('leading-none', duration < 15 && 'line-clamp-1')}>
             <span className="font-display text-base leading-none">{title}</span>

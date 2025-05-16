@@ -22,7 +22,7 @@ export const Schedule: React.FC<{sessions: (Omit<Session, 'speaker'> & {speaker?
       </div>
       <ul className="">
         {sessions.map((session, index) => (
-          <ScheduleSession key={index} session={session} firstStart={firstStart} />
+          <ScheduleSession key={index} session={session} firstStart={firstStart} index={index} />
         ))}
       </ul>
     </div>
