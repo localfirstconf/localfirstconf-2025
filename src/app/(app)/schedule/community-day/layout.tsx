@@ -17,7 +17,7 @@ export default function Layout({
     <div className="flex w-full gap-16">
       <div className={cn('duration-300 ease-in-out md:transition-transform', centered ? 'md:translate-x-1/2' : 'md:translate-x-0')}>
         <SchedulePage type="community-day">
-          <div className="mb-1 uppercase tracking-widest text-orange md:text-lg">Local-First Conf 2025</div>
+          <div className="mb-1 uppercase tracking-widest text-white md:text-lg">Local-First Conf 2025</div>
           <h1 className="font-display text-4xl uppercase leading-none md:text-7xl">Community Day</h1>
           <p className="mb-8 mt-8">
             The community day is on Monday, May 26. The venue is Delta Campus, located at{' '}

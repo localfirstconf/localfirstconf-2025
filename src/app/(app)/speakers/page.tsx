@@ -7,8 +7,8 @@ export default function SpeakersPage() {
   return (
     <div className="w-full max-w-3xl px-4 py-16 md:px-0 md:py-24">
       <LogoLink className="mb-12 block md:hidden" />
-      <div className="mb-1 uppercase tracking-widest text-orange md:text-lg">Speakers</div>
-      <h1 className="font-display text-4xl uppercase leading-none md:text-6xl">Hear from the World&apos;s best Local-First Builders</h1>
+      <div className="mb-1 uppercase tracking-widest text-white md:text-lg">Local First Conf 2025</div>
+      <h1 className="font-display text-4xl uppercase leading-none md:text-6xl">Speakers</h1>
       <ul className="mt-16 grid grid-cols-2 gap-y-16 md:grid-cols-3">
         {allProfiles
           .filter((profile) => profile.speaker)
