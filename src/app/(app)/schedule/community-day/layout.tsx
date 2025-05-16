@@ -19,13 +19,14 @@ export default function Layout({
         <SchedulePage type="community-day">
           <div className="mb-1 uppercase tracking-widest text-orange md:text-lg">Local-First Conf 2025</div>
           <h1 className="font-display text-4xl uppercase leading-none md:text-7xl">Community Day</h1>
-          <p className="mb-16 mt-8">
+          <p className="mb-8 mt-8">
             The community day is on Monday, May 26. The venue is Delta Campus, located at{' '}
             <a href="https://maps.app.goo.gl/oio61mjBbdxXNJak8" target="_blank" rel="noreferrer" className="underline">
               Donaustr. 44, 12043 Berlin, Germany
             </a>
             .
           </p>
+          <p className="mb-12 mt-8">There are two tracks. The first is the unconference, which will organize starting at 9:30am. Below is the schedule for the expo track, which are practical coding workshops with local-first libraries and vendors. Bring your laptop!</p>
         </SchedulePage>
       </div>
       <Transition
