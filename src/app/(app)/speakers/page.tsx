@@ -20,9 +20,6 @@ export default function SpeakersPage() {
                   {avatar ? (
                     <>
                       <Image src={avatar} alt={name} fill className="object-contain object-center" />
-                        <svg viewBox="0 0 689 689" xmlns="http://www.w3.org/2000/svg" className="absolute -inset-px fill-current text-black">
-                          <path fillRule="evenodd" clipRule="evenodd" d="M233 0H0V689H558.5H689V0H233ZM233 0L643.5 92V591L558.5 689L35 571V302L233 0Z" />
-                        </svg>
                     </>
                   ) : (
                     <div className="flex h-full w-full items-center justify-center bg-neutral-100">
