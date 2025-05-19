@@ -15,15 +15,15 @@ export default function SchedulePage() {
       <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         <Link href="/schedule/community-day" className="group relative">
           <svg
-            viewBox="0 0 609 689"
+            viewBox="0 0 100 100"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             className="w-full scale-90 fill-current text-magenta opacity-0 transition-all duration-200 ease-in-out group-hover:scale-100 group-hover:opacity-100"
           >
-            <path d="M198.5 0L0.5 302V571L524 689L609 591V92L198.5 0Z" fill="#E28FF4" />
+            <circle cx="50" cy="50" r="50" />
           </svg>
           <svg
-            viewBox="0 0 619 701"
+            viewBox="0 0 100 100"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             className="absolute inset-0 fill-current text-white transition-all duration-200 ease-in-out group-hover:scale-110 group-hover:opacity-0"
@@ -31,24 +31,24 @@ export default function SchedulePage() {
             <path
               fillRule="evenodd"
               clipRule="evenodd"
-              d="M201.216 0.364136L619 93.9966V598.866L530.818 700.535L0.5 580.998V306.507L201.216 0.364136ZM205.784 11.6359L10.5 309.493V573.002L527.182 689.465L609 595.134V102.003L205.784 11.6359Z"
+              d="M50 0C77.6142 0 100 22.3858 100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50C0 22.3858 22.3858 0 50 0ZM50 2.5C76.2335 2.5 97.5 23.7665 97.5 50C97.5 76.2335 76.2335 97.5 50 97.5C23.7665 97.5 2.5 76.2335 2.5 50C2.5 23.7665 23.7665 2.5 50 2.5Z"
             />
           </svg>
-          <h2 className="absolute inset-0 flex items-center justify-center font-display text-2xl uppercase leading-none group-hover:text-black md:text-3xl">
+          <h2 className="absolute inset-0 flex items-center justify-center text-center font-display text-2xl uppercase leading-none group-hover:text-black md:text-3xl">
             Monday<br/>Community Day
           </h2>
         </Link>
         <Link href="/schedule/talks-day-1" className="group relative">
           <svg
-            viewBox="0 0 610 688"
+            viewBox="0 0 100 100"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             className="w-full scale-90 fill-current text-magenta opacity-0 transition-all duration-200 ease-in-out group-hover:scale-100 group-hover:opacity-100"
           >
-            <path d="M97 687.5L0 121L469 0L609.5 209.5V602L97 687.5Z" />
+            <circle cx="50" cy="50" r="50" />
           </svg>
           <svg
-            viewBox="0 0 621 700"
+            viewBox="0 0 100 100"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             className="absolute inset-0 fill-current text-white transition-all duration-200 ease-in-out group-hover:scale-110 group-hover:opacity-0"
@@ -56,25 +56,25 @@ export default function SchedulePage() {
             <path
               fillRule="evenodd"
               clipRule="evenodd"
-              d="M477.18 0.273804L620.5 213.979V612.235L98.9121 699.251L0.295166 123.308L477.18 0.273804ZM11.705 130.692L107.088 687.749L610.5 603.765V217.021L472.82 11.7262L11.705 130.692Z"
+              d="M50 0C77.6142 0 100 22.3858 100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50C0 22.3858 22.3858 0 50 0ZM50 2.5C76.2335 2.5 97.5 23.7665 97.5 50C97.5 76.2335 76.2335 97.5 50 97.5C23.7665 97.5 2.5 76.2335 2.5 50C2.5 23.7665 23.7665 2.5 50 2.5Z"
             />
           </svg>
-          <h2 className="absolute inset-0 flex items-center justify-center font-display text-2xl uppercase leading-none group-hover:text-black md:text-3xl">
+          <h2 className="absolute inset-0 flex items-center justify-center text-center font-display text-2xl uppercase leading-none group-hover:text-black md:text-3xl">
             Tuesday<br/>
             Talks, Day 1
           </h2>
         </Link>
         <Link href="/schedule/talks-day-2" className="group relative">
           <svg
-            viewBox="0 0 610 688"
+            viewBox="0 0 100 100"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             className="w-full scale-90 fill-current text-magenta opacity-0 transition-all duration-200 ease-in-out group-hover:scale-100 group-hover:opacity-100"
           >
-            <path d="M97 687.5L0 121L469 0L609.5 209.5V602L97 687.5Z" />
+            <circle cx="50" cy="50" r="50" />
           </svg>
           <svg
-            viewBox="0 0 621 700"
+            viewBox="0 0 100 100"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             className="absolute inset-0 fill-current text-white transition-all duration-200 ease-in-out group-hover:scale-110 group-hover:opacity-0"
@@ -82,10 +82,10 @@ export default function SchedulePage() {
             <path
               fillRule="evenodd"
               clipRule="evenodd"
-              d="M477.18 0.273804L620.5 213.979V612.235L98.9121 699.251L0.295166 123.308L477.18 0.273804ZM11.705 130.692L107.088 687.749L610.5 603.765V217.021L472.82 11.7262L11.705 130.692Z"
+              d="M50 0C77.6142 0 100 22.3858 100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50C0 22.3858 22.3858 0 50 0ZM50 2.5C76.2335 2.5 97.5 23.7665 97.5 50C97.5 76.2335 76.2335 97.5 50 97.5C23.7665 97.5 2.5 76.2335 2.5 50C2.5 23.7665 23.7665 2.5 50 2.5Z"
             />
           </svg>
-          <h2 className="absolute inset-0 flex items-center justify-center font-display text-2xl uppercase leading-none group-hover:text-black md:text-3xl">
+          <h2 className="absolute inset-0 flex items-center justify-center text-center font-display text-2xl uppercase leading-none group-hover:text-black md:text-3xl">
             Wednesday<br/>
             Talks, Day 2
           </h2>
