@@ -1,12 +1,15 @@
-import {allSessions, allProfiles} from 'contentlayer/generated'
+import {allSessions, allProfiles, Profile} from 'contentlayer/generated'
 import {notFound} from 'next/navigation'
 import {Metadata} from 'next'
 import {DesktopDrawer} from '@/components/desktop-drawer'
 import {MobileDrawer} from '@/components/mobile-drawer'
 
 const sessions = allSessions.map((session) => {
-  const speaker = allProfiles.find((profile) => profile.slug === session.speaker)!
-  return {...session, speaker}
+  const speakerSlugs = Array.isArray(session.speaker) ? session.speaker : session.speaker ? [session.speaker] : []
+  const speakers = speakerSlugs
+    .map(slug => allProfiles.find(profile => profile.slug === slug))
+    .filter((p): p is Profile => p !== undefined)
+  return {...session, speakers}
 })
 
 export async function generateMetadata({params: {slug}}: {params: {slug: string}}): Promise<Metadata> {

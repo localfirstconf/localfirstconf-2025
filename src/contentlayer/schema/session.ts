@@ -12,7 +12,11 @@ export const Session = defineDocumentType(() => ({
   fields: {
     title: {type: 'string', required: true},
     placeholder: {type: 'boolean', default: false},
-    speaker: {type: 'string', required: false, description: 'Slug of the speaker'},
+    speaker: {
+      type: 'json',
+      required: false,
+      description: 'Slug of the speaker, or array of speaker slugs for multiple speakers'
+    },
     start: {type: 'date', required: true},
     duration: {type: 'number', required: true, description: 'Duration in minutes'},
     location: {type: 'string', required: false}

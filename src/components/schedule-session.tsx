@@ -13,16 +13,16 @@ const colors = [
 ]
 
 export const ScheduleSession: FC<{
-  session: Omit<Session, 'speaker'> & {speaker?: Profile}
+  session: Omit<Session, 'speaker'> & {speakers?: Profile[]}
   firstStart: Date
   index: number
 }> = ({session, firstStart, index}) => {
-  const {title, speaker, placeholder, start, duration, path} = session
+  const {title, speakers, placeholder, start, duration, path} = session
   const pathname = usePathname()
   const color = colors[index % 2]
 
-  if (!placeholder && !speaker) {
-    console.error('Speaker is undefined for non-placeholder session:', { title, path })
+  if (!placeholder && (!speakers || speakers.length === 0)) {
+    console.error('No speakers found for non-placeholder session:', { title, path })
     return null
   }
 
@@ -46,7 +46,11 @@ export const ScheduleSession: FC<{
         >
           <h3 className={cn('leading-none', duration < 15 && 'line-clamp-1')}>
             <span className="font-display text-base leading-none">{title}</span>
-            {speaker && <span className="text-xs opacity-75">{` ${speaker.name}`}</span>}
+            {speakers && speakers.length > 0 && (
+              <span className="text-xs opacity-75">
+                {` ${speakers.map(s => s.name).join(', ')}`}
+              </span>
+            )}
           </h3>
         </Link>
       )}
