@@ -20,10 +20,17 @@ export default function Layout({
         <SchedulePage type="talks-day-2">
           <div className="mb-1 uppercase tracking-widest text-white md:text-lg">Local-First Conf 2025</div>
           <h1 className="font-display text-4xl uppercase leading-none md:text-7xl">Talks, Day 2</h1>
-          <p className="mb-16 mt-8">
+          <p className="mb-8 mt-8">
             The second day of talks is on Wednesday, May 28. The venue is nHow Berlin located at{' '}
             <a href="https://maps.app.goo.gl/QeY8FyGUfgCPHhst8" target="_blank" rel="noreferrer" className="underline">
-              Stralauer Allee 3, 10245 Berlin
+              Stralauer Allee 3
+            </a>
+            .
+          </p>
+          <p className="mb-16 mt-8">
+            The afterparty takes place at OELGARTEN located at{' '}
+            <a href="https://maps.app.goo.gl/cUV6T9tQhFCfXUfj9" target="_blank" rel="noreferrer" className="underline">
+              Schleusenufer 1
             </a>
             .
           </p>
