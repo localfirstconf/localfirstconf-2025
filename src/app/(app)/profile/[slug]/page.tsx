@@ -3,7 +3,6 @@ import {LinkedinIcon} from '@/components/icons/linkedin'
 import {MastodonIcon} from '@/components/icons/mastodon'
 import {TwitterIcon} from '@/components/icons/twitter'
 import {WhatsappIcon} from '@/components/icons/whatsapp'
-import {QRButton} from '@/components/qr-button'
 import {SpeakerBadge} from '@/components/speaker-badge'
 import {WorkshopHostBadge} from '@/components/workshop-host-badge'
 import {cn} from '@/utils/cn'
@@ -14,7 +13,6 @@ import {useMDXComponent} from 'next-contentlayer/hooks'
 import Image from 'next/image'
 import Link from 'next/link'
 import {notFound} from 'next/navigation'
-import QRCode from 'react-qr-code'
 
 export async function generateStaticParams() {
   return allProfiles.map((profile) => ({
@@ -27,7 +25,12 @@ export default function AttendeePage({params: {slug}}: {params: {slug: string}})
   if (!profile) notFound()
 
   const Content = useMDXComponent(profile.body.code)
-  const sessions = allSessions.filter((session) => session.speaker === slug)
+  const sessions = allSessions.filter((session) => {
+    if (Array.isArray(session.speaker)) {
+      return session.speaker.includes(slug)
+    }
+    return session.speaker === slug
+  })
 
   return (
     <div className="w-full max-w-3xl gap-8 px-4 py-24 md:px-0">
@@ -49,78 +52,56 @@ export default function AttendeePage({params: {slug}}: {params: {slug: string}})
               Email: {profile.email}
             </Link>
           )}
-          <ul className="mt-8 flex flex-wrap gap-2">
-            {profile.email && (
-              <li>
-                <Link href={`mailto:${profile.email}`} className="flex size-12 items-center justify-center rounded-full bg-white hover:bg-blue">
-                  <EnvelopeIcon className="size-5 text-black" />
-                </Link>
-              </li>
-            )}
-            {profile.whatsapp && (
-              <li>
-                <Link
-                  href={`https://wa.me/${profile.whatsapp}`}
-                  className="flex size-12 items-center justify-center rounded-full bg-white hover:bg-green-600"
-                >
-                  <WhatsappIcon className="size-5 text-black" />
-                </Link>
-              </li>
-            )}
+          {profile.website && (
+            <Link href={profile.website} className="mt-4 block">
+              Website: {profile.website}
+            </Link>
+          )}
+          <div className="mt-8 flex gap-4">
             {profile.twitter && (
-              <li>
-                <Link href={profile.twitter} className="flex size-12 items-center justify-center rounded-full bg-white hover:bg-blue">
-                  <TwitterIcon className="size-5 text-black" />
-                </Link>
-              </li>
+              <Link href={`https://twitter.com/${profile.twitter}`} target="_blank" rel="noreferrer">
+                <TwitterIcon className="size-6" />
+              </Link>
             )}
             {profile.mastodon && (
-              <li>
-                <Link href={profile.mastodon} className="flex size-12 items-center justify-center rounded-full bg-white hover:bg-blue">
-                  <MastodonIcon className="size-5 text-black" />
-                </Link>
-              </li>
+              <Link href={profile.mastodon} target="_blank" rel="noreferrer">
+                <MastodonIcon className="size-6" />
+              </Link>
             )}
             {profile.linkedin && (
-              <li>
-                <Link href={profile.linkedin} className="flex size-12 items-center justify-center rounded-full bg-white hover:bg-blue">
-                  <LinkedinIcon className="size-5 text-black" />
-                </Link>
-              </li>
+              <Link href={`https://linkedin.com/in/${profile.linkedin}`} target="_blank" rel="noreferrer">
+                <LinkedinIcon className="size-6" />
+              </Link>
             )}
             {profile.instagram && (
-              <li>
-                <Link href={profile.instagram} className="flex size-12 items-center justify-center rounded-full bg-white hover:bg-orange">
-                  <InstagramIcon className="size-5 text-black" />
-                </Link>
-              </li>
+              <Link href={`https://instagram.com/${profile.instagram}`} target="_blank" rel="noreferrer">
+                <InstagramIcon className="size-6" />
+              </Link>
             )}
-            {profile.website && (
-              <li>
-                <Link href={profile.website} className="flex size-12 items-center justify-center rounded-full bg-white hover:bg-magenta">
-                  <GlobeAltIcon className="size-5 text-black" />
-                </Link>
-              </li>
+            {profile.whatsapp && (
+              <Link href={`https://wa.me/${profile.whatsapp}`} target="_blank" rel="noreferrer">
+                <WhatsappIcon className="size-6" />
+              </Link>
             )}
-          </ul>
-          <QRButton url={`https://app-2025.localfirstconf.com/profile/${profile.slug}`} />
+          </div>
         </div>
-        <div className="relative size-64 shrink-0">
-          {profile.avatar && (
-            <>
-              <Image
-                src={profile.avatar}
-                alt={profile.name}
-                fill
-                className="object-contain object-center transition-transform duration-150 ease-in-out group-hover:scale-105"
-              />
-              {profile.avatar.startsWith('https://') && (
-                <svg viewBox="0 0 689 689" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 fill-current text-black">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M233 0H0V689H558.5H689V0H233ZM233 0L643.5 92V591L558.5 689L35 571V302L233 0Z" />
-                </svg>
-              )}
-            </>
-          )}
+        <div className="flex flex-col items-center gap-8">
+          <div className="relative aspect-square w-64">
+            {profile.avatar ? (
+              <>
+                <Image src={profile.avatar} alt={profile.name} fill className="object-contain object-center" />
+                {profile.avatar.startsWith('https://') && (
+                  <svg viewBox="0 0 689 689" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 fill-current text-white">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M233 0H0V689H558.5H689V0H233ZM233 0L643.5 92V591L558.5 689L35 571V302L233 0Z" />
+                  </svg>
+                )}
+              </>
+            ) : (
+              <div className="flex h-full w-full items-center justify-center bg-neutral-100">
+                <span className="text-4xl text-neutral-400">{profile.name.charAt(0)}</span>
+              </div>
+            )}
+          </div>
         </div>
       </div>
       {sessions.length > 0 && (
