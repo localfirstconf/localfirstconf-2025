@@ -3,6 +3,7 @@ import {LinkedinIcon} from '@/components/icons/linkedin'
 import {MastodonIcon} from '@/components/icons/mastodon'
 import {TwitterIcon} from '@/components/icons/twitter'
 import {WhatsappIcon} from '@/components/icons/whatsapp'
+import {BlueskyIcon} from '@/components/icons/bluesky'
 import {SpeakerBadge} from '@/components/speaker-badge'
 import {WorkshopHostBadge} from '@/components/workshop-host-badge'
 import {cn} from '@/utils/cn'
@@ -66,6 +67,11 @@ export default function AttendeePage({params: {slug}}: {params: {slug: string}})
             {profile.mastodon && (
               <Link href={profile.mastodon} target="_blank" rel="noreferrer">
                 <MastodonIcon className="size-6" />
+              </Link>
+            )}
+            {profile.bluesky && (
+              <Link href={profile.bluesky} target="_blank" rel="noreferrer">
+                <BlueskyIcon className="size-6" />
               </Link>
             )}
             {profile.linkedin && (
