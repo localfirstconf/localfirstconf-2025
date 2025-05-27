@@ -19,7 +19,8 @@ export const Session = defineDocumentType(() => ({
     },
     start: {type: 'date', required: true},
     duration: {type: 'number', required: true, description: 'Duration in minutes'},
-    location: {type: 'string', required: false}
+    location: {type: 'string', required: false},
+    discussion: {type: 'string', required: false}
   },
   computedFields: {
     path: {
