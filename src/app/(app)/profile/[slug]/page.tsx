@@ -9,7 +9,8 @@ import {WorkshopHostBadge} from '@/components/workshop-host-badge'
 import {cn} from '@/utils/cn'
 import {EnvelopeIcon, GlobeAltIcon} from '@heroicons/react/20/solid'
 import {allProfiles, allSessions} from 'contentlayer/generated'
-import {addMinutes, format} from 'date-fns'
+import {addMinutes} from 'date-fns'
+import {format, toZonedTime} from 'date-fns-tz'
 import {useMDXComponent} from 'next-contentlayer/hooks'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -129,8 +130,8 @@ export default function AttendeePage({params: {slug}}: {params: {slug: string}})
                       </h3>
                     </div>
                     <div className="shrink-0 text-right leading-tight">
-                      <div>{`${format(new Date(start), 'HH:mm')}`}</div>
-                      <div>{format(addMinutes(new Date(start), duration), 'HH:mm')}</div>
+                      <div>{format(toZonedTime(start, 'Europe/Berlin'), 'HH:mm', {timeZone: 'Europe/Berlin'})}</div>
+                      <div>{format(toZonedTime(addMinutes(start, duration), 'Europe/Berlin'), 'HH:mm', {timeZone: 'Europe/Berlin'})}</div>
                     </div>
                   </div>
                 </Link>
