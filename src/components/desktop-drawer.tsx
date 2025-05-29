@@ -54,6 +54,7 @@ export const DesktopDrawer: FC<{back: string; session: Omit<Session, 'speaker'> 
         <div className="prose prose-sm prose-neutral mt-16 text-neutral-500">
           <Content />
         </div>
+        {session.discussion && <a href={session.discussion} target="_blank" rel="noopener noreferrer" className="mt-8 text-blue">Live transcription & discussion</a>}
         <SessionFeedback sessionTitle={session.title} />
         <div className="h-16" />
       </div>

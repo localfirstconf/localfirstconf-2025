@@ -66,6 +66,7 @@ export const MobileDrawer: FC<{session: Omit<Session, 'speaker'> & {speakers?: P
             <div className="prose prose-sm prose-neutral mt-12 text-neutral-500">
               <Content />
             </div>
+            {session.discussion && <a href={session.discussion} target="_blank" rel="noopener noreferrer" className="mt-8 text-blue">Live transcription & discussion</a>}
             <SessionFeedback sessionTitle={session.title} />
           </div>
         </Drawer.Content>

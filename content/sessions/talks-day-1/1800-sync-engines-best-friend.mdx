@@ -3,7 +3,8 @@ title: "Sync engine's best friend: fine-grained rendering"
 start: 2025-05-27T18:00:00+02:00
 duration: 15
 speaker: dev-agrawal
---- 
+discussion: https://waffle.place/lfc25?channel=talk14-sync-engines-best-friend
+---
 
 We all love sync engines for their ability to simplify state management and enable instant UI interactions, but the secret third benefit is the potential of highly efficient data processing. Sync engines that own the state on both client and server have this incredibly ability to only push granular changes to the client as they happen. So it’s a shame that we hand this granular data off to a UI renderer that has no idea how to process them and resorts to rerunning and diffing everything. What if our UI renderer matched the technical capability of our state management?
 
